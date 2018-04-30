@@ -67,7 +67,7 @@ OBJS =	actors.o ballop.o clockr.o demons.o dgame.o dinit.o dmain.o\
 
 dungeon: $(OBJS) dtextc.dat
 	$(CC) $(CFLAGS) -o zork $(OBJS) $(LIBS)
-	$(CC) aurora-poc.cpp -o poc
+	g++ aurora-poc.cpp -o poc
 
 install: zork dtextc.dat
 	mkdir -p $(BINDIR) $(LIBDIR) $(MANDIR)/man6
