@@ -1,20 +1,5 @@
-```
-Welcome to Dungeon.			This version created 11-MAR-91.
-You are in an open field west of a big white house with a boarded
-front door.
-There is a small mailbox here.
->
-```
-# DUNGEON (Zork I)
-
-Public Domain source code to the original DUNGEON game (Zork I). Released to the PD by Infocom. Includes 
-source files, headers, and information.
-
-```
-$ make
-```
-
-## History of the C Implementation of Dungeon
+	History of the C Implementation of Dungeon
+	==========================================
 
 This version of dungeon has been modified from FORTRAN to C.  The
 original was written in DEC FORTRAN, translated from MDL.  It was then
@@ -26,10 +11,10 @@ Schryer (AT&T Bell Labs).
 
 I. From the original documentation...
 
-To: Dungeon Players
-From: "The Translator"
-Subj: Game Information
-Date: 8-OCT-80
+To:	Dungeon Players
+From:	"The Translator"
+Subj:	Game Information
+Date:	8-OCT-80
 
 
 This is the first (and last) source release of the PDP-11 version of 
@@ -59,9 +44,10 @@ ZORK(tm) is a trademark of Infocom, Inc.  It is available for several
 popular personal computers as well as for the PDP-ll.
 
 
-## Summary
+SUMMARY
+-------
 
-   Welcome to Dungeon!
+		    Welcome to Dungeon!
 
    Dungeon is a game of adventure, danger, and low cunning.  In it
 you will explore some of the most amazing territory ever seen by mortal
@@ -126,4 +112,3 @@ to remove the FORTRAN I/O library, to add simple more processing, and
 to change the format of the database file.  Andre Srinivasan
 (andre@cs.pitt.edu) help test it.  Jonathan Mark
 (uunet!microsoft!jonm) made it work under MS-DOS and Microsoft C.
-
