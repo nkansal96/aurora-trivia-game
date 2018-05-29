@@ -1,0 +1,3 @@
+[submodule "lib/aurora"]
+	path = lib/aurora
+	url = https://github.com/nkansal96/aurora-cpp.git

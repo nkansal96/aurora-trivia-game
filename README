@@ -1,4 +1,0 @@
-This is a simple proof of concept for Aurora API.
-It it a trivia game in which five questions are asked to the player
-and the player is scored based on whether their responses are correct.
-It shows examples of text to speech, speech to text, interpret, and playing audio files.
