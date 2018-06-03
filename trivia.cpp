@@ -11,13 +11,13 @@ struct TriviaQuestion {
 
 void setAuroraConfiguration() {
   if(!getenv("APP_TOKEN")){
-    std::cerr << "ERROR: No \"APP_TOKEN\" enviornment variable set" << std::endl;
+    std::cerr << "ERROR: No \"APP_TOKEN\" environment variable set" << std::endl;
     exit(1);
   } else {
     aurora::config.appToken = getenv("APP_TOKEN");
   }
   if(!getenv("APP_ID")) {
-    std::cerr << "ERROR: No \"APP_ID\" enviornment variable set"<< std::endl;
+    std::cerr << "ERROR: No \"APP_ID\" environment variable set"<< std::endl;
     exit(1);
   } else {
     aurora::config.appID = getenv("APP_ID");
