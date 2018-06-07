@@ -39,6 +39,13 @@ bool processAnswer(const std::vector<std::string> &possibleAnswers) {
 
   aurora::Text answerText = aurora::listenAndTranscribe(params);
 
+  std::cout << "[HUMAN] " << answerText.getText() << std::endl;
+
+  std::cout << "Correct Answers:" << std::endl;
+  for (const std::string &answer : possibleAnswers) {
+    std::cout << "  " << answer << std::endl;
+  }
+
   for (const std::string &answer : possibleAnswers) {
     if (answerText == answer) {
       return true;
@@ -57,7 +64,7 @@ int main(int argc, char **argv) {
   int score = 0;
 
   std::vector<TriviaQuestion> questions = {
-    {"what is the capital of california", {"Sacramento"}},
+    {"What is the capital of california", {"Sacramento"}},
     {"From which country did the Beatles originate", {"England", "United Kingdom", "Britain", "UK"}},
     {"What song is Rebecca Black most famous for", {"Friday"}},
     {"What country has paris as its capital", {"France"}},
@@ -65,25 +72,32 @@ int main(int argc, char **argv) {
   };
 
   for (TriviaQuestion &q : questions) {
+    std::cout << "[COMPUTER] " << q.question << "?" << std::endl;
+
     aurora::Text(q.question).speech().getAudio().play();
 
     if (processAnswer(q.answers)) {
+      std::cout << "[COMPUTER] Correct!" << std::endl;
       score++;
       correctSpeech.getAudio().play();
     }
     else {
+      std::cout << "[COMPUTER] Incorrect!" << std::endl;
       incorrectSpeech.getAudio().play();
     }
+    
+    std::cout << std::endl;
   }
 
   std::vector<std::string> scoreMessages = {
-    "You have a final score of zero. are you even trying?",
-    "You have a final score of one. At least you got the one",
-    "You have a final score of two. Almost half correct",
-    "You have a final score of three. A little over half correct",
-    "You have a final score of four. Almost perfect",
-    "You have a perfect score of five. congratulations"
+    "You have a final score of zero. Are you even trying?",
+    "You have a final score of one. At least you got the one.",
+    "You have a final score of two. Almost half correct.",
+    "You have a final score of three. A little over half correct.",
+    "You have a final score of four. Almost perfect.",
+    "You have a perfect score of five. Congratulations!"
   };
 
+  std::cout << "[COMPUTER] " << scoreMessages[score] << std::endl;
   aurora::Text(scoreMessages[score]).speech().getAudio().play();
 }
